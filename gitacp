@@ -18,7 +18,6 @@ else
     echo "$GREEN Found Message"
 fi
 echo "$BLUE Committing with the message provided... $WHITE"
-
 git commit -m "$1"
 echo "$GREEN Commit Successful"
 echo "$BLUE Pushing to the remote origin...$WHITE"
