@@ -10,7 +10,7 @@ echo " Adding all files to the staging area...$WHITE"
 git add .
 echo "$GREEN Added all files to the staging area"
 echo "$BLUE Checking for message provided..."
-if [-z "$1"]
+if ["$1"]
 then 
     echo "$RED Exitting the Script..."
     exit
