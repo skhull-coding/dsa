@@ -3,7 +3,7 @@
 GREEN="\033[1;32m"
 BLUE="\033[1;34m"
 RED="\033[1;31m"
-WHITE="\033[1;37m"
+WHITE="\033[0;37m"
 
 echo "$BLUE Git Command Running...."
 echo " Adding all files to the staging area...$WHITE"
