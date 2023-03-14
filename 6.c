@@ -11,13 +11,13 @@ void display(int arr[], int n)
     }
 }
 
-int indDeletion(int arr[], int size, int index){
-    for (int i = index; i < size-1; i++)
+int indDeletion(int arr[], int size, int index)
+{
+    for (int i = index; i < size - 1; i++)
     {
-        arr[i] = arr[i+1];
+        arr[i] = arr[i + 1];
     }
     return 1;
-    
 }
 
 int main()
