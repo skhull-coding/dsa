@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "\033[1;31m---Program Start---\033[0;37m\n" &&
+gcc "$1" && ./a.out &&
+echo "\033[1;32m\n\n---Program END---"
