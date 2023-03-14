@@ -10,9 +10,10 @@ echo " Adding all files to the staging area...$WHITE"
 git add .
 echo "$GREEN Added all files to the staging area"
 echo "$BLUE Checking for message provided..."
-if ["$1"]
+if [ -z "$1" ]
 then 
-    echo "$RED Exitting the Script..."
+    echo "$RED No Message Found"
+    echo " Exitting the Script..."
     exit
 else 
     echo "$GREEN Found Message"
