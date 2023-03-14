@@ -6,7 +6,7 @@ typedef struct myArray
     int total_size;
     int used_size;
 
-    int *ptr = NULL;
+    int *ptr;
 
 } mArr;
 

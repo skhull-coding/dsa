@@ -1,0 +1,21 @@
+#!/bin/sh
+echo "Git Command Running...."
+echo "Adding all files to the staging area..."
+git add .
+echo "Added all files to the staging area"
+echo "Checking for message provided..."
+echo $1
+if [-z "$1"]
+then 
+    echo "Exitting the Script..."
+    exit
+else 
+    echo "Found Message"
+fi
+echo "Committing with the message provided..."
+
+git commit -m "$1"
+echo "Commit Successful"
+echo "Pushing to the remote origin..."
+git push origin main
+echo "Pushed successfull"
