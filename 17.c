@@ -73,21 +73,21 @@ int pop(pStack stack)
 
 int peek(pStack stack, int index)
 {
-    if (index > stack->top || index < 0)
+    if (index > stack->top+1 || index < 1)
     {
         printf("Cannot find!!\n");
         return -1;
     }
     else
     {
-        return (stack->arr)[index];
+        return (stack->arr)[stack->top - index + 1];
     }
 }
 
 int main()
 {
 
-    pStack s = createStack(1);
+    pStack s = createStack(12);
 
     push(s, 45);
     push(s, 34);
@@ -98,7 +98,7 @@ int main()
     push(s, 31);
 
     printStack(s);
-    printf("%d", peek(s, 2));
+    printf("%d", peek(s, 4));
 
     return 0;
 }
