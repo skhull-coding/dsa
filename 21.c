@@ -70,6 +70,7 @@ char pop(pStack stack)
     }
     return 0;
 }
+
 void clearStack(pStack stack)
 {
     while (!isEmpty(stack))
@@ -78,6 +79,7 @@ void clearStack(pStack stack)
     }
     free(stack);
 }
+
 int paranthesisMatching(char expression[])
 {
     pStack brackets = createStack();
@@ -127,7 +129,7 @@ int paranthesisMatching(char expression[])
 
 int main()
 {
-    char string[] = "{}8+[]{({9)}}";
+    char string[] = "([a*a-(3+2])";
 
     if (paranthesisMatching(string))
     {
