@@ -52,15 +52,30 @@ void printStack(pStack stack)
 // Push at top in the stack - O(1)
 void push(pStack stack, int data)
 {
-    pNode node = createNode(data);
-    node->next = stack->top;
-    stack->top = node;
+    if (!isFull(stack))
+    {
+        pNode node = createNode(data);
+        node->next = stack->top;
+        stack->top = node;
+    }
+    return -1;
 }
 
 // Checks if the stack is empty or not - O(1)
 int isEmpty(pStack stack)
 {
     return stack->top == NULL;
+}
+
+int isFull(pStack stack)
+{
+    pNode temp = createNode(0);
+    if (temp == NULL)
+    {
+        return 1;
+    }
+    free(temp);
+    return 0;
 }
 
 // Delete the top node and returns its value - O(1)
