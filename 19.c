@@ -67,6 +67,7 @@ int isEmpty(pStack stack)
     return stack->top == NULL;
 }
 
+// Checks if the heap memory is full or not - O(1)
 int isFull(pStack stack)
 {
     pNode temp = createNode(0);
