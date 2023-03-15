@@ -49,6 +49,10 @@ pNode deleteAtFirstIndex(pNode head)
 
 pNode deleteAtIndex(pNode head, int index)
 {
+    if (index == 0)
+    {
+        return deleteAtFirstIndex(head);
+    }
     pNode ptr = head;
     int i = 0;
     while (i != index - 1)
@@ -126,6 +130,9 @@ int main()
     traverseNode(HEAD);
 
     HEAD = deleteAtValue(HEAD, 2);
+    traverseNode(HEAD);
+
+    HEAD = deleteAtIndex(HEAD, 0);
     traverseNode(HEAD);
 
     return 0;
