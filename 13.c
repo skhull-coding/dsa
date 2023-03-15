@@ -83,8 +83,7 @@ pNode deleteAtValue(pNode head, int value)
 
     if (ptr->data == value)
     {
-        head = deleteAtFirstIndex(head);
-        return head;
+        return deleteAtFirstIndex(head);
     }
 
     while (ptr->next->data != value)
