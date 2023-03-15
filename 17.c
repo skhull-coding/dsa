@@ -17,8 +17,8 @@ pStack createStack(int size)
 {
     pStack stack = (pStack)malloc(sizeof(Stack));
     stack->top = -1;
-    stack->size = size;
-    stack->arr = (int *)malloc(size * sizeof(int));
+    stack->size = (size-1);
+    stack->arr = (int *)malloc(stack->size * sizeof(int));
     return stack;
 }
 
@@ -87,7 +87,7 @@ int peek(pStack stack, int index)
 int main()
 {
 
-    pStack s = createStack(12);
+    pStack s = createStack(1);
 
     push(s, 45);
     push(s, 34);
