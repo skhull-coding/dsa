@@ -73,7 +73,11 @@ void enqueue_F(pQueue q, int data)
                 q->front = q->size - 1;
             }
         }
-        else
+        else if (isEmpty(q))
+        {
+            enqueue(q, data);
+        }
+        else if (q->front == -1)
         {
             (q->arr)[q->size - 1] = data;
             q->front = q->size - 2;
@@ -147,9 +151,9 @@ int firstVal(pQueue q)
 
 int peek(pQueue queue, int pos)
 {
-    if (!isEmpty(queue) && !(pos > queue->rear - queue->front) && (pos > 0))
+    if (!isEmpty(queue) && (pos > 0))
     {
-        return ((queue->arr)[queue->front + pos]);
+        return ((queue->arr)[(queue->front + pos) % queue->size]);
     }
     else
     {
@@ -185,7 +189,31 @@ int main()
     dequeue_B(trains);
     dequeue_B(trains);
     dequeue_B(trains);
+
     enqueue_F(trains, 99);
+    enqueue_F(trains, 98);
+    enqueue_F(trains, 97);
+    enqueue_F(trains, 96);
+    enqueue_F(trains, 95);
+    enqueue_F(trains, 94);
+    enqueue_F(trains, 93);
+    enqueue_F(trains, 92);
+
+    enqueue_F(trains, 99);
+    dequeue(trains);
+    dequeue(trains);
+    dequeue(trains);
+    dequeue(trains);
+    dequeue(trains);
+    dequeue(trains);
+    dequeue(trains);
+    dequeue(trains);
+    dequeue(trains);
+    dequeue(trains);
+    enqueue(trains, 36);
+    enqueue(trains, 36);
+    enqueue(trains, 36);
+    enqueue(trains, 36);
 
     printf("First value : %d\n", firstVal(trains));
     printf("Last value : %d\n", lastVal(trains));
