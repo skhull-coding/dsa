@@ -13,8 +13,7 @@ typedef Queue *pQueue;
 pQueue createQueue(int size)
 {
     pQueue queue = (pQueue)malloc(sizeof(Queue));
-    queue->first = -1;
-    queue->last = -1;
+    queue->first = queue->last = -1; // assigning values to multiple variables
     queue->size = size;
     queue->arr = (int *)malloc(queue->size * sizeof(int));
     return queue;
