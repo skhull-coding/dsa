@@ -131,6 +131,16 @@ int peek(pQueue queue, int pos)
     return -1;
 }
 
+void clearQueue(pQueue q)
+{
+    while (!isEmpty(q))
+    {
+        dequeue(q);
+    }
+    free(q);
+    q = NULL;
+}
+
 int main()
 {
     pQueue trainLine = createQueue();
@@ -155,6 +165,8 @@ int main()
     printf("%d\n", firstVal(trainLine));
 
     printf("%d", peek(trainLine, 0));
+
+    clearQueue(trainLine);
 
     return 0;
 }
