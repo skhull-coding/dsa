@@ -102,6 +102,12 @@ int qPeek(pQueue queue, int pos)
     return -1;
 }
 
+void clearQueue(pQueue queue)
+{
+    free(queue->arr);
+    free(queue);
+}
+
 int main()
 {
     pQueue trainLine = createQueue(10);
@@ -128,6 +134,8 @@ int main()
     printQueue(trainLine);
     printf("%d %d", valAtFirst(trainLine), valAtLast(trainLine));
     printf("\n%d", qPeek(trainLine, 1));
+
+    clearQueue(trainLine);
 
     return 0;
 }
