@@ -22,7 +22,7 @@ void bubbleSort(int arr[], int size)
 
 void bubbleSort2(int arr[], int size)
 {
-    int min, isIncreasing = 0, p = 1;
+    int isIncreasing = 0;
 
     for (int i = 0; i < size - 1; i++)
     {
@@ -30,7 +30,7 @@ void bubbleSort2(int arr[], int size)
         {
             break;
         }
-        p = 1;
+        isIncreasing = 1;
         for (int j = 0; j < size - 1 - i; j++)
         {
             y += 1;
@@ -39,25 +39,7 @@ void bubbleSort2(int arr[], int size)
                 int temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
-            }
-            if (j == 0)
-            {
-                min = arr[j];
-            }
-            if (p && j!=0)
-            {
-                if ((arr[j] >= arr[j - 1]))
-                {
-                    if (arr[j] >= min && arr[j - 1] >= min)
-                    {
-                        isIncreasing = 1;
-                    }
-                    else
-                    {
-                        isIncreasing = 0;
-                        p = 0;
-                    }
-                }
+                isIncreasing = 0;
             }
         }
     }
@@ -65,8 +47,8 @@ void bubbleSort2(int arr[], int size)
 
 int main()
 {
-    int arr[] = {1, 2, 3, 5,4,1,3, 6, 7, 9,8, 890};
-    int arr2[] = {1, 2, 3, 5,4,1,3, 6, 7, 9,8, 890};
+    int arr[] = {1, 2, 3, 5, 6, 7, 9, 8, 890};
+    int arr2[] = {1, 2, 3, 5, 6, 7, 9, 8, 890};
     int size = sizeof(arr) / sizeof(int);
     bubbleSort(arr, size);
     bubbleSort2(arr2, size);
