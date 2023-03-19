@@ -1,0 +1,26 @@
+#!/bin/sh
+
+GREEN="\033[1;32m"
+BLUE="\033[1;34m"
+RED="\033[1;31m"
+WHITE="\033[0;37m"
+
+echo "$BLUE Git Command Running...."
+echo " Adding all files to the staging area...$WHITE"
+git add .
+echo "$GREEN Added all files to the staging area"
+echo "$BLUE Checking for message provided..."
+if [ -z "$1" ]
+then 
+    echo "$RED No Message Found"
+    echo " Exitting the Script..."
+    exit
+else 
+    echo "$GREEN Found Message"
+fi
+echo "$BLUE Committing with the message provided... $WHITE"
+git commit -m "$1"
+echo "$GREEN Commit Successful"
+echo "$BLUE Pushing to the remote origin...$WHITE"
+git push origin main
+echo "$GREEN Pushed successfull"
